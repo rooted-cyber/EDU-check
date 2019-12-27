@@ -26,6 +26,39 @@ pink () {
 	fi
 	
 	}
+	
+	
+	
+	buy1 () {
+	echo "27/06/2020" >> ~/EDU-check/27.06.2020
+	#echo "19/06/2020" >> /sdcard/19062020
+	echo -e -n "\033[96m Enter current date ( dd.mm.yyyy ) "
+	read n
+	if [ $n ];then
+	cd ~/EDU-check
+	rm -f 27.06.2020
+	echo "hi" >> $n
+	fi
+	cd ~/EDU-check
+	if [ -e 27.06.2020 ];then
+	printf "\n\n\033[91m [×] Sorry , your replacement date expire
+	
+	"
+	else
+	printf "\n\n \033[92m Replacement is needed
+	
+	Your replacement date :- 27/12/2019
+	
+	And Replacement expire date :- 27/06/2020
+	
+	Your replacement edu email :- buy1@mail.ccsf.edu
+	
+	"
+	fi
+	
+	}
+	
+	
 	cd $PREFIX/bin
 if [ -e EDU ];then
 echo
@@ -67,13 +100,15 @@ update () {
 	bash check.sh
 	}
 printf "	\033[91m [ 1 ]\033[92m pink@mail.ccsf.edu
-	\033[91m [ 2 ]\033[92m Update tool
-	\033[91m [ 3 ]\033[92m Exit\n\n\n"
+	\033[91m [ 2 ]\033[92m buy1@mail.ccsf.edu
+	\033[91m [ 3 ]\033[92m Update tool
+	\033[91m [ 4 ]\033[92m Exit\n\n\n"
 	echo -e -n "\033[96m Type :- "
 	read a
 	case $a in
 	1)pink ;;
-	2)update ;;
-	3)exit 0 ;;
+	2)buy1 ;;
+	3)update ;;
+	4)exit 0 ;;
 	*)EDU ;;
 	esac
